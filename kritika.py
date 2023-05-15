@@ -7,7 +7,7 @@ a=[]
 for i in range(len(time_stamps)):
   if float(time_stamps[i])>0:
     a.append(time_stamps[i])
-print(len(a))
+
 a.sort()
 max=float(a[0])
 for i in range(len(a)):
@@ -31,7 +31,7 @@ a3=[]
 for i in range(len(time_stamps3)):
   if float(time_stamps3[i])>0:
     a3.append(time_stamps3[i])
-print(len(a3))
+
 a3.sort()
 max3=float(a3[0])
 for i in range(len(a3)):
@@ -55,7 +55,7 @@ a2=[]
 for i in range(len(time_stamps2)):
   if float(time_stamps2[i])>0:
     a2.append(time_stamps2[i])
-print(len(a2))
+
 a2.sort()
 max2=float(a2[0])
 for i in range(len(a2)):
@@ -79,7 +79,7 @@ a1=[]
 for i in range(len(time_stamps1)):
   if float(time_stamps1[i])>0:
     a1.append(time_stamps1[i])
-print(len(a1))
+
 a1.sort()
 max1=float(a1[0])
 for i in range(len(a1)):
@@ -95,7 +95,10 @@ for i in range(int(max1) +1):
 y1=[]
 for i in range(int(max1)+1):
     y1.append(i)
-    
+print(len(a))
+print(len(a1))
+print(len(a2))
+print(len(a3))
 
 plt.xlabel("time span")
 plt.ylabel("frequency of events")
@@ -130,13 +133,13 @@ for k in range(7):
     bin1.append(0)
     for i in range(int(min_time)):
         counter=0
-        if(b[i]>k*5+140):
+        if(b[i]>k*5+130):
             counter+=1
-        if(b1[i]>k*5+140):
+        if(b1[i]>k*5+130):
             counter+=1
-        if(b2[i]>k*5+140):
+        if(b2[i]>k*5+130):
             counter+=1
-        if(b2[i]>k*5+140):
+        if(b2[i]>k*5+130):
             counter+=1
         if(counter>0):
             bin1[k]+=1
@@ -144,13 +147,13 @@ for k in range(7):
     bin2.append(0)
     for i in range(int(min_time)):
         counter=0
-        if(b[i]>k*5+140):
+        if(b[i]>k*5+130):
             counter+=1
-        if(b1[i]>k*5+140):
+        if(b1[i]>k*5+130):
             counter+=1
-        if(b2[i]>k*5+140):
+        if(b2[i]>k*5+130):
             counter+=1
-        if(b2[i]>k*5+140):
+        if(b2[i]>k*5+130):
             counter+=1
         if(counter>1):
             bin2[k]+=1
@@ -159,13 +162,13 @@ for k in range(7):
     bin3.append(0)
     for i in range(int(min_time)):
         counter=0
-        if(b[i]>k*5+140):
+        if(b[i]>k*5+130):
             counter+=1
-        if(b1[i]>k*5+140):
+        if(b1[i]>k*5+130):
             counter+=1
-        if(b2[i]>k*5+140):
+        if(b2[i]>k*5+130):
             counter+=1
-        if(b2[i]>k*5+140):
+        if(b2[i]>k*5+130):
             counter+=1
         if(counter>2):
             bin3[k]+=1
@@ -174,13 +177,13 @@ for k in range(7):
     bin4.append(0)
     for i in range(int(min_time)):
         counter=0
-        if(b[i]>k*5+140):
+        if(b[i]>k*5+130):
             counter+=1
-        if(b1[i]>k*5+140):
+        if(b1[i]>k*5+130):
             counter+=1
-        if(b2[i]>k*5+140):
+        if(b2[i]>k*5+130):
             counter+=1
-        if(b2[i]>k*5+140):
+        if(b2[i]>k*5+130):
             counter+=1
         if(counter>4):
             bin4[k]+=1
@@ -189,7 +192,10 @@ for k in range(7):
 
 dict={1:bin1,2:bin2,3:bin3,4:bin4}
 print(dict)
-
+# As the no. of event increases the time of  interval which has max. frequency also increases.
+# Observing the frequency versus time plot, one can conclude that there exists a rough order between the 4 lines; green > orange > blue > red is valid for all points, except for a few exceptions. This order is maintained on comparing the total number of events in each file. 
+# In green line the frequency of peaks increases as time passes, whereas there is a decrease in orange. Blue has most in the middle while red stays consistent at all times.
+# Most peaks in the graph are coinciding at most 3 times and there are very less peaks in between 130 to 140.
 
           
 
